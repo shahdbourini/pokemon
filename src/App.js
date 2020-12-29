@@ -16,15 +16,15 @@ function App() {
     <BrowserRouter >
         <Switch>
 
-        <Route exact path="/pokedex">
+        <Route exact path="/pokemon">
         <Header/>
-            <Pokédex/>
+            <Home/>
           </Route>
 
-          {/* <Route exact path="/pokedex" >
+          <Route exact path="/pokedex" >
           <Header/>
             <Pokédex/>
-          </Route> */}
+          </Route>
 
           <Route exact path="/legendaries">
           <Header/>
