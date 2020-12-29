@@ -20,8 +20,8 @@ function Navbar() {
 
           <li className="nav-item ">
             <NavLink
-              onClick={() => (window.location.href = '/Pokedex')}
-              to="/Pokedex"
+              onClick={() => (window.location.href = '/pokedex')}
+              to="/pokedex"
               activeClassName="is-active"
               className="nav-link"
             >
@@ -31,8 +31,8 @@ function Navbar() {
 
           <li className="nav-item ">
             <NavLink
-              onClick={() => (window.location.href = '/Legendaries')}
-              to="/Legendaries"
+              onClick={() => (window.location.href = '/legendaries')}
+              to="/legendaries"
               activeClassName="is-active"
               className="nav-link"
             >
@@ -42,8 +42,8 @@ function Navbar() {
 
           <li className="nav-item ">
             <NavLink
-              onClick={() => (window.location.href = '/Documentation')}
-              to="/Documentation"
+              onClick={() => (window.location.href = '/documentation')}
+              to="/documentation"
               activeClassName="is-active"
               className="nav-link"
             >

@@ -21,17 +21,17 @@ function App() {
             <Home/>
           </Route>
 
-          <Route exact path="/Pokedex" >
+          <Route exact path="/pokedex" >
           <Header/>
             <Pokédex/>
           </Route>
 
-          <Route exact path="/Legendaries">
+          <Route exact path="/legendaries">
           <Header/>
             <Legendaries  />
           </Route>
 
-          <Route exact path="/Documentation">
+          <Route exact path="/documentation">
           <P404/>
           </Route>
 
