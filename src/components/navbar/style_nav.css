@@ -1,0 +1,16 @@
+
+.nav-item  {
+   padding-right: 51.16px;
+ font-family: Karla;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 29px;
+color: #212121;
+
+
+}
+.nav-item a:is-active{
+    text-decoration: underline;
+    text-underline-position: under;
+}

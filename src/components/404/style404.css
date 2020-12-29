@@ -1,0 +1,40 @@
+.background{
+    background-color: #D93E30;
+    width: 100%;
+    height:1000px;
+}
+
+.img404{
+    width: 88%;
+    text-align: center;
+    left: 3%;
+    position: relative;
+    top:110px; 
+}
+.rocket{
+    position: absolute;
+    width: 50%;
+    left: 26%;
+    top:110px;
+}
+
+.text404{
+    position: relative;
+    top: 100px;
+    text-align: center;
+    font-family: Karla;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+}
+.text404 span{
+    color:white;
+}
+
+.text404 button{
+    
+background: #F2CB07;
+box-shadow: inset 0px -9px 0px #F2CB07;
+border-radius: 11px;
+width: 20%;
+}

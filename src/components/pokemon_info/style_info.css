@@ -1,0 +1,44 @@
+
+.all-rate{
+    display: inline-block;
+    position: relative;
+    height: 80px;
+    width: 50%;
+    float: left;
+}
+
+
+.rate{
+    height: 7px;
+    clear: both;
+    background: #f8f8f8;
+    position: relative;
+    top: 14px;
+    width: 72%;
+    border-radius: 5px;
+    
+}
+
+.rate span{
+    width:80%;
+    background: #F5DB13;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0
+}
+.sp1{
+    float: left;
+    text-align: initial;
+    font-family: Karla;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.sp1 span{
+    display: block;
+    
+}

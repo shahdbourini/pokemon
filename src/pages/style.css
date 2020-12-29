@@ -1,0 +1,22 @@
+
+.img{
+    background-image: url(../img/yellow.png);
+    height: 971.37px;
+    box-shadow: 0px 4px 16px rgba(1, 28, 64, 0.2);
+    
+}
+
+.con{
+    position: relative;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    background: #F5DB13;
+}
+
+

@@ -1,0 +1,70 @@
+
+
+.part2{
+    position: relative;
+   /* top: 834px; */
+
+}
+.p2_div{
+    float: left;
+    position: relative;
+    left: 8%;
+    font-family: Karla;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 21px;
+color: #212121;
+}
+
+.row2_div{
+    position: relative;
+    right: 12%;
+    float: right;
+    font-family: Karla;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #212121;
+}
+
+
+
+
+/***** MEDIA QUERIES *****/
+
+
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (max-width: 743px) {
+	
+ 
+
+     .part2 {
+                top: 800px;
+            }
+     .p2_div,.row2_div {
+                font-size: 18px;
+               
+            }
+
+}
+
+@media (max-width: 465px) {
+
+        .part2 {
+            top: 814px;
+        }
+
+     .p2_div,.row2_div {
+            font-size: 13px;
+           
+        }
+}
+
+

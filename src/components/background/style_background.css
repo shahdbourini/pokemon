@@ -1,0 +1,141 @@
+
+.text{
+    position: absolute;
+   top: 2%;
+  /* left: 50%;
+  transform: translate(-50%, -50%); */ 
+}
+
+.text p:first-child{
+font-family: Karla;
+font-style: normal;
+font-size: 72px;
+line-height: 84px;
+letter-spacing: 4px;
+text-align: left;
+top: 62px;
+position: relative;
+}
+
+.p2{
+    font-family: Karla;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 37px;
+text-align: left;
+top: 100px;
+ position: relative;
+    }
+
+.Main-button{
+    background: #73D677;
+box-shadow: inset 0px -9px 0px rgba(0, 0, 0, 0.18);
+border-radius: 11px;
+float: left;
+top: 158px;
+ position: relative;
+
+}
+
+.p_div{
+    margin-left: 11%;
+position: relative;
+}
+
+.part2{
+    position: relative;
+   top: 834px;
+
+}
+.p2_div{
+    float: left;
+    position: relative;
+    left: 8%;
+    font-family: Karla;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 21px;
+color: #212121;
+}
+
+.row2_div{
+    position: relative;
+    right: 12%;
+    float: right;
+    font-family: Karla;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #212121;
+}
+
+
+
+
+/***** MEDIA QUERIES *****/
+
+
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (max-width: 743px) {
+	
+    .text p:first-child {
+        font-size: 53px;
+        line-height: 65px;
+        letter-spacing: 3px;
+        top: 27px;
+    }
+
+    .p2 {
+        font-size: 26px;
+        line-height: 35px;
+        top: 48px;}
+
+     .Main-button {
+            top: 107px;}
+
+     .part2 {
+                top: 800px;
+            }
+     .p2_div,.row2_div {
+                font-size: 18px;
+               
+            }
+
+}
+
+@media (max-width: 465px) {
+    .text p:first-child {
+        font-size: 41px;
+        line-height: 55px;
+        letter-spacing: 3px;
+        top: 8px;
+    }
+
+    .p2 {
+        font-size: 21px;
+        line-height: 31px;
+        top: 33px;
+    }
+
+    .Main-button {
+        top: 86px;}
+
+        .part2 {
+            top: 814px;
+        }
+
+     .p2_div,.row2_div {
+            font-size: 13px;
+           
+        }
+}
+
+
