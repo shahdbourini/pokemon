@@ -9,15 +9,15 @@ function Navbar() {
         <ul className="navbar-nav ml-auto">
           <li className="nav-item ">
             <NavLink
-              onClick={() => (window.location.href = '/pokemon')}
-              to="/pokemon"
+              onClick={() => (window.location.href = '/pokedex')}
+              to="/pokedex"
               activeClassName="is-active"
               className="nav-link"
             >
               Home
             </NavLink>
           </li>
-
+{/* 
           <li className="nav-item ">
             <NavLink
               onClick={() => (window.location.href = '/pokedex')}
@@ -27,7 +27,7 @@ function Navbar() {
             >
               Pokédex
             </NavLink>
-          </li>
+          </li> */}
 
           <li className="nav-item ">
             <NavLink
