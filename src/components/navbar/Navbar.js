@@ -1,15 +1,15 @@
 import './style_nav.css';
-import { NavLink, BrowserRouter } from 'react-router-dom';
+import { NavLink, BrowserRouter,useHistory } from 'react-router-dom';
 
 function Navbar() {
-  // let history = useHistory();
+  let history = useHistory();
   return (
     <>
       <BrowserRouter>
         <ul className="navbar-nav ml-auto">
           <li className="nav-item ">
             <NavLink
-              onClick={() => (window.location.href = '/')}
+              onClick={() => history.push("/") }
               to="/"
               activeClassName="is-active"
               className="nav-link"
@@ -20,7 +20,7 @@ function Navbar() {
 
           <li className="nav-item ">
             <NavLink
-              onClick={() => (window.location.href = '/pokedex')}
+              onClick={() => history.push("/pokedex")}
               to="/pokedex"
               activeClassName="is-active"
               className="nav-link"
@@ -31,7 +31,7 @@ function Navbar() {
 
           <li className="nav-item ">
             <NavLink
-              onClick={() => (window.location.href = '/legendaries')}
+              onClick={() => history.push("/legendaries")}
               to="/legendaries"
               activeClassName="is-active"
               className="nav-link"
@@ -42,7 +42,7 @@ function Navbar() {
 
           <li className="nav-item ">
             <NavLink
-              onClick={() => (window.location.href = '/documentation')}
+              onClick={() => history.push(  '/documentation')}
               to="/documentation"
               activeClassName="is-active"
               className="nav-link"

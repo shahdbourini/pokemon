@@ -9,35 +9,43 @@ function Slide(props) {
   const [info, setInfo] = useState([]);
 
   useEffect(() => {
-    // axios.get(`https://pokeapi.co/api/v2/egg-group/${props.type}`).then((type) => {
-    for (let i = 1; i <= 15; i++) {
-      axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`).then((result) => {
-        axios.get(`https://pokeres.bastionbot.org/images/pokemon/${i}.png`).then((res) => {
-            setInfo((info) => [...info,
-              {
-                id: i,
-                name: result.data.name,
-                photo: res.config,
-                hp: result.data['stats'][5]['base_stat'],
-                attack: result.data['stats'][4]['base_stat'],
-                defense: result.data['stats'][3]['base_stat'],
-              },
-            ]);
-          });
-        // });
+    axios.get(`https://pokeapi.co/api/v2/type/${props.type}`).then((type) => {
+      type.data.pokemon.slice(0, 15).map((pokemon) => {
+        const pokiId = pokemon.pokemon.url.split('/')[6]
+        return axios.get(pokemon.pokemon.url).then((result) => {
+          axios
+            .get(
+              `https://pokeres.bastionbot.org/images/pokemon/${pokiId}.png`
+            )
+            .then((res) => {
+              setInfo((info) => [
+                ...info,
+                {
+                  id: pokiId,
+                  name: result.data.name,
+                  photo: res.config,
+                  hp: result.data['stats'][5]['base_stat'],
+                  attack: result.data['stats'][4]['base_stat'],
+                  defense: result.data['stats'][3]['base_stat'],
+                },
+              ]);
+            });
+          // });
+        });
       });
-    }
-    // console.log(type);
-  // });
-   return()=> {
-    setInfo([]);
-   }
-
-  }, []);
+    });
+   
+    return () => {
+      setInfo([]);
+    };
+  }, [props.type]);
 
   return (
     <>
-      <div className="leng-title" style={{top:props.top, marginBottom:props.bottom}}>
+      <div
+        className="leng-title"
+        style={{ top: props.top, marginBottom: props.bottom }}
+      >
         <h2>{props.title}</h2>
         <hr className="divider" />
       </div>
@@ -48,31 +56,27 @@ function Slide(props) {
         showIndicators={false}
         style={{ width: `30px` }}
       >
-
-
-{info.map((image,key) => (
+        {info.map((image, key) => (
           <div key={image.id}>
-            <img src={image.photo.url} className="img-slide" alt="img"  />
-          <div className="row">
-          <div className="col-3"></div>
-          <div className="col-9">
-            <div className="details">
-              <h1>{image.name}</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                penatibus et magnis dis parturient montes, nascetur ridiculus
-                mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
-                quis, sem. Nulla consequat massa quis enim.
-              </p>
+            <img src={image.photo.url} className="img-slide" alt="img" />
+            <div className="row">
+              <div className="col-3"></div>
+              <div className="col-9">
+                <div className="details">
+                  <h1>{image.name}</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                    natoque penatibus et magnis dis parturient montes, nascetur
+                    ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                    eu, pretium quis, sem. Nulla consequat massa quis enim.
+                  </p>
+                </div>
+                <Info />
+              </div>
             </div>
-            <Info />
           </div>
-        </div>
-        </div>
-))}
-     
-      
+        ))}
       </Carousel>
     </>
   );
