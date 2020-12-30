@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter >
         <Switch>
 
-        <Route exact path="/pokemon">
+        <Route exact path="/">
         <Header/>
             <Home/>
           </Route>
