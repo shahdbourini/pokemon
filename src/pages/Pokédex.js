@@ -1,35 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './style.css';
-import Search from "../components/search/Search";
-import CheckBox from "../components/checkbox/CheckBox";
-import Grid from "../components/grid_imgs/Grid";
+import Search from '../components/search/Search';
+import CheckBox from '../components/checkbox/CheckBox';
+import Grid from '../components/grid_imgs/Grid';
 import Footer from '../components/footer/Footer';
 
 function Pokédex() {
-
   const [info, setInfo] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [popInfo, setPopInfo] = useState([]);
-  const [input,setInput]=useState("");
+  const [input, setInput] = useState('');
+
 
   const togglePopup = (image) => {
-    setPopInfo([{
-      name:image.name,
-      photo:image.photo,
-      color:image.color,
-    }]);
+    setPopInfo([
+      {
+        name: image.name,
+        photo: image.photo,
+        color: image.color,
+      },
+    ]);
     setIsOpen(!isOpen);
   };
 
-  const handleOnChange = (e)=>{
+  const handleOnChange = (e) => {
     e.preventDefault();
     setInput(e.target.value);
-    }
- 
-    
+  };
+
   useEffect(() => {
     for (let i = 1; i <= 9; i++) {
       axios
@@ -64,30 +65,34 @@ function Pokédex() {
           setError('Something went wrong');
         });
     }
-    
-    const results = info.filter(item =>
-      item.name.toLowerCase().includes(input)
-    );
-    setInfo(results)
-    // console.log(results);
 
     return () => {
       setInfo([]);
     };
-  }, [input]);
-  // console.log(info);
+  }, []);
+
+  const result = !input
+    ? info
+    : info.filter((item) =>
+        item.name.toLowerCase().includes(input.toLocaleLowerCase())
+      );
 
   return (
-    < >
-<div className="container">
-   <Search info={info} handleOnChange={handleOnChange} input={input} />
-   <CheckBox/>
-   <Grid top='834px' info={info} loading={loading} error={error}
-    popInfo={popInfo} isOpen={isOpen} togglePopup={togglePopup}  />
-   <Footer top='200px'/>
-
-</div>
-
+    <>
+      <div className="container">
+        <Search result={result} handleOnChange={handleOnChange} input={input} />
+        <CheckBox />
+        <Grid
+          top="834px"
+          result={result}
+          loading={loading}
+          error={error}
+          popInfo={popInfo}
+          isOpen={isOpen}
+          togglePopup={togglePopup}
+        />
+        <Footer top="200px" />
+      </div>
     </>
   );
 }
