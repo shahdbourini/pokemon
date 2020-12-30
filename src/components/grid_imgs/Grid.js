@@ -1,6 +1,7 @@
 import './style_grid.css';
 import PopupBox from './PopupBox';
 import React, { useState } from 'react';
+import loading1 from "../../img/loading.jpg";
 
 function Grid(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,10 +21,13 @@ function Grid(props) {
   return (
     <>
       {props.loading ? (
-        <h3 className="loading">Loading!! Please wait</h3>
+    <div className="loading">
+    <img className="img-loading"  src={loading1} alt ="img_loading"/>
+    <h3 >Loading!! Please wait... </h3>
+    </div>
       ) : (
         <div className="row row-container">
-          {props.info.map((image) => (
+          {props.result.map((image) => (
             <div className="col-sm-6 col-lg-4 " key={image.id}>
               <div className="row-item">
                 <div

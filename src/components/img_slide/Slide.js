@@ -4,9 +4,12 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import Info from '../pokemon_info/Info';
 import './style_slide.css';
+import loading1 from "../../img/loading.jpg";
 
 function Slide(props) {
   const [info, setInfo] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     axios.get(`https://pokeapi.co/api/v2/type/${props.type}`).then((type) => {
@@ -18,6 +21,7 @@ function Slide(props) {
               `https://pokeres.bastionbot.org/images/pokemon/${pokiId}.png`
             )
             .then((res) => {
+              setLoading(false);
               setInfo((info) => [
                 ...info,
                 {
@@ -30,14 +34,19 @@ function Slide(props) {
                 },
               ]);
             });
-          // });
         });
       });
+      
+    })
+    .catch((error) => {
+      setLoading(false);
+      setInfo({});
+      setError('Something went wrong');
     });
-   
     return () => {
-      setInfo([]);
-    };
+    setInfo([]);
+     };
+
   }, [props.type]);
 
   return (
@@ -50,7 +59,12 @@ function Slide(props) {
         <hr className="divider" />
       </div>
 
-      <Carousel
+      {loading ? (
+        <div className="loading">
+        <img className="img-loading"  src={loading1} alt ="img_loading"/>
+        <h3 >Loading!! Please wait... </h3>
+        </div>
+      ) : ( <Carousel
         showArrows={false}
         showStatus={false}
         showIndicators={false}
@@ -78,6 +92,8 @@ function Slide(props) {
           </div>
         ))}
       </Carousel>
+           )}
+               {error ? <h3 className="loading">{error}</h3> : null}
     </>
   );
 }

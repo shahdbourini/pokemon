@@ -266,3 +266,8 @@
   display: inline-block;
 }
 
+.img-loading{
+  width: 7%;
+  border-radius: 100%;
+  display: inline-block;
+}
